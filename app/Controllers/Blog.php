@@ -19,6 +19,22 @@ class Blog extends BaseController
         echo view('blog/index', $data);
 	}
 
+    public function agent(){
+
+        $agent = $this->request->getUserAgent();
+
+        $data = [
+            'navegador' => $agent->getBrowser(),
+            'version' => $agent->getVersion(),
+            'movil' => $agent->getMobile(),
+            'robot' => $agent->getRobot(),
+            'plataforma' => $agent->getPlatform()
+        ];
+
+        echo view('agent', $data);
+
+    }
+
     public function new(){
         echo view('blog/new.php');
     }

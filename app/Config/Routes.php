@@ -35,6 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 $routes->resource('blog');
+$routes->get('agent', 'Blog::agent');
 
 
 /*
